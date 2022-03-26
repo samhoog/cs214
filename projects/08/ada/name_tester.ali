@@ -1,0 +1,96 @@
+V "GNAT Lib v7"
+M P W=b
+A -gnata
+P SS ZX
+
+RN
+RV NO_IO
+RV NO_SECONDARY_STACK
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV SPARK_05
+
+U name_tester%b		name_tester.adb		3d04e315 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W system.assertions%s	s-assert.adb		s-assert.ali
+W system.concat_5%s	s-conca5.adb		s-conca5.ali
+W system.concat_6%s	s-conca6.adb		s-conca6.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+D ada.ads		20170106103348 76789da1 ada%s
+D a-except.ads		20151016123252 291912d5 ada.exceptions%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20151016130316 01f5e3ef ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
+D interfac.ads		20160502101001 5ab55268 interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D name_tester.adb	20220310182102 056916c1 name_tester%b
+D system.ads		20170510173650 4635ec04 system%s
+D s-assert.ads		20140225151544 cd8d2c94 system.assertions%s
+D s-conca5.ads		20140225151544 875e432e system.concat_5%s
+D s-conca6.ads		20140225151544 d2c72db2 system.concat_6%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-secsta.ads		20170112134946 9751b57e system.secondary_stack%s
+D s-soflin.ads		20151020124036 14e1eb6c system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 10|7r6 7r23
+X 6 a-textio.ads
+49K13*Text_IO 471e16 10|7w10 7r27
+166U14*New_Line 10|149s74 167s16 180s16 183s22 188s16 189s22 191s30
+240U14*Get 10|150s10 151s10 152s10
+242U14*Put 10|86s10 87s10 88s10 89s10 90s10 149s10 183s4 189s4 191s4
+X 10 name_tester.adb
+9U11*name_tester 9b11 193l5 193t16
+11i3 NAME_SIZE{integer} 15r27 16r28 17r26 145r27 146r28 147r26
+13R8 Name 18e15 20r11 33r33 47r34 53r35 59r33 72r37 84r31 99r37 110r38 121r36
+. 133r31 144r32
+15a7 MyFirst{string} 35m13 49r22 74r22 86r22 101m18 135r49
+16a7 MyMiddle{string} 36m13 55r22 74r46 88r22 112m18 135r73 135r90
+17a7 MyLast{string} 37m13 61r22 74r71 90r22 123m18 135r25
+20r3 aName{13R8} 153m19 154m20 155m18 159m9 161r28 162r29 163r27 164r31 167r8
+. 170m13 171m14 172m12 175r28 176r29 177r27 178r31 180r8 183r13 184r25 187r9
+. 188r8 189r13
+33U13 Init 33b13 33<19 33>39 33>46 33>54 38l7 38t11 159s4
+33r19 TheName{13R8} 35m5 36m5 37m5
+33a39 First{string} 35r24
+33a46 Middle{string} 36r25
+33a54 Last{string} 37r23
+47V12 getFirst{string} 47b12 47>21 50l8 50t16 161s19 175s19
+47r21 TheName{13R8} 49r14
+53V12 getMiddle{string} 53b12 53>22 56l8 56t17 162s19 176s19
+53r22 TheName{13R8} 55r14
+59V12 getLast{string} 59b12 59>20 62l8 62t15 163s19 177s19
+59r20 TheName{13R8} 61r14
+72V12 getFullName{string} 72b12 72>24 75l8 75t19 164s19 178s19
+72r24 theName{13R8} 74r14 74r38 74r63
+84U14 Put 84b14 84>18 91l11 91t14 167s4 180s4 188s4
+84r18 theName{13R8} 86r14 88r14 90r14
+99U14 setFirst 99b14 99<23 99>43 102l11 102t19 153s10 170s4
+99r23 theName{13R8} 101m10
+99a43 First{string} 101r29
+110U14 setMiddle 110b14 110<24 110>44 113l11 113t20 154s10 171s4
+110r24 theName{13R8} 112m10
+110a44 Middle{string} 112r30
+121U14 setLast 121b14 121<22 121>42 124l11 124t18 155s10 172s4
+121r22 theName{13R8} 123m10
+121a42 Last{string} 123r28
+133V13 lfmi{string} 133b13 133>18 136l11 136t15 183s8 184s20 189s8
+133r18 theName{13R8} 135r17 135r41 135r65 135r82
+144U14 read 144b14 144>19 156l11 156t15 187s4
+144r19 theName{13R8}
+145a7 first{string} 150m14 153r26
+146a7 middle{string} 151m14 154r27
+147a7 last{string} 152m14 155r25
+
