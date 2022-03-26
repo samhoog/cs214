@@ -1,0 +1,15 @@
+Script started on 2022-02-10 12:39:31-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> d (defn sumSque ares [seqOfSequs  s][seqOfSeqs] (reduce + (map * seqOfSequs  s seqOfSeqs)(map * seqOfSeqs seqOfSeqs))user=> (defn sumSquares [seqOfSeqs] (reduce + (map * seqOfSeqs seqOfSeqs)))user=> (defn sumSquares [seqOfSeqs] (reduce + (map * seqOfSeqs seqOfSeqs)))user=> [K(defn sumSquares [seqOfSeqs] (reduce + (map * seqOfSeqs seqOfSeqs)))
+[K#'user/sumSquares
+user=> [Kuser=> [Kuser=> (sum S  Squares '(1 2 3)(1 2 3))user=> [K(sumSquares '(1 2 3))
+14
+user=> [Kuser=> [Kuser=> (sumSquares '(1 2 3 4 5)(1 2 3 4 5))user=> [K(sumSquares '(1 2 3 4 5))
+55
+user=> [Kuser=> [Kuser=> (sumSquares [-1 [2    -2 -3 0 1][-1 -2 -3 0 1])user=> (sumSquares [-1 -2 -3 0 1])user=> [K(sumSquares [-1 -2 -3 0 1])
+15
+user=> [Kuser=> [Kuser=> 
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 12:40:26-05:00 [COMMAND_EXIT_CODE="0"]

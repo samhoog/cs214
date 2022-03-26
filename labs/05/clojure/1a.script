@@ -1,0 +1,14 @@
+Script started on 2022-02-10 11:48:38-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ ((fn [x y z] (max (Math/abs x) (math    Math/abs y ) (Math/abs z))) 2 10 5)                        [A]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ ((fn [x y z] (max (Math/abs x) (Math/abs y [K[A]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ ((fn [x y z] (max (Math/abs x) (Math/abs [K
+[K[A]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ ((fn [x y z] (max (Math/abs x) (Math/abs                                          clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> ((fn [x y] (+ (* x x) (* y y))) 3 4)user=> [K((fn [x y z][x y z] (max (Math/abs x)(Math/abs x) (Math/abs y)(Math/abs y) (Math/abs z)(Math/abs z))user=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z)))user=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 2 10 5)user=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 2 10 5)user=> [K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 2 10 5)
+[K10
+user=> [Kuser=> [Kuser=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 2 10 5)[1@-0 -55)user=> [K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 2 10 -55)
+55
+user=> [Kuser=> [Kuser=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 2 10 -55)[1@-[1@4[1@1user=> [K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) -412 10 -55)
+412
+user=> [Kuser=> [Kuser=> exit    
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 11:49:46-05:00 [COMMAND_EXIT_CODE="0"]

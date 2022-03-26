@@ -1,0 +1,253 @@
+Script started on 2022-02-10 11:40:39-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (+ 1 2 3 4 5)user=> (+ 1 2 3 4 5)user=> [K(+ 1 2 3 4 5)
+15
+user=> [Kuser=> [Kuser=> 
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 11:40:56-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-10 11:42:11-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (+ 1 2 3 4 5)user=> [8Pleave![Kleave(+ 1 2 3 4 5)user=> [K(fn [x][x] (_ + x x)(+ x x) )user=> (fn [x] (+ x x) )user=> [K(fn [x] (+ x x) )
+[K#object[user$eval136$fn__137 0x29182679 "user$eval136$fn__137@29182679"]
+user=> [Kuser=> [Kuser=> ((fn [x][x] (+ x x)(+ x x))user=> ((fn [x] (+ x x)) 21)user=> ((fn [x] (+ x x)) 21)user=> [K((fn [x] (+ x x)) 21)
+42
+user=> [Kuser=> [Kuser=> ((fn [x y][x y] (+ {* x x      (* x x)(* x x) (* y y)(* y y))(+ (* x x) (* y y)))user=> ((fn [x y] (+ (* x x) (* y y))) 3 4)user=> ((fn [x y] (+ (* x x) (* y y))) 3 4)user=> [K((fn [x y] (+ (* x x) (* y y))) 3 4)
+25
+user=> [Kuser=> [Kuser=> 
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 11:43:24-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-10 11:48:38-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ ((fn [x y z] (max (Math/abs x) (math    Math/abs y ) (Math/abs z))) 2 10 5)                        [A]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ ((fn [x y z] (max (Math/abs x) (Math/abs y [K[A]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ ((fn [x y z] (max (Math/abs x) (Math/abs [K
+[K[A]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ ((fn [x y z] (max (Math/abs x) (Math/abs                                          clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> ((fn [x y] (+ (* x x) (* y y))) 3 4)user=> [K((fn [x y z][x y z] (max (Math/abs x)(Math/abs x) (Math/abs y)(Math/abs y) (Math/abs z)(Math/abs z))user=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z)))user=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 2 10 5)user=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 2 10 5)user=> [K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 2 10 5)
+[K10
+user=> [Kuser=> [Kuser=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 2 10 5)[1@-0 -55)user=> [K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 2 10 -55)
+55
+user=> [Kuser=> [Kuser=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 2 10 -55)[1@-[1@4[1@1user=> [K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) -412 10 -55)
+412
+user=> [Kuser=> [Kuser=> exit    
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 11:49:46-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-10 11:52:55-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> ((fn [x y z][x y z] )user=> ((fn [x y z] ) ( +    + x y z)(+ x y z))user=> ((fn [x y z] (+ x y z)) 2 5 7)user=> ((fn [x y z] (+ x y z)) 2 5 7)user=> [K((fn [x y z] (+ x y z)) 2 5 7)
+[K14
+user=> [Kuser=> [Kuser=> ((fn [x y z] (+ x y z)) 2 5 7)[1@- [1@1user=> [K((fn [x y z] (+ x y z)) 12 5 -7)
+10
+user=> [Kuser=> [Kuser=> ((fn [x][x] (N nil? x)(nil? x))user=> ((fn [x] (nil? x)) 4)user=> ((fn [x] (nil? x)) 4)user=> [K((fn [x] (nil? x)) 4)
+false
+user=> [Kuser=> [Kuser=> ((fn [x] (nil? x)) 4)[1@0[1P)user=> [K((fn [x] (nil? x)) 0)
+false
+user=> [Kuser=> [Kuser=> ((fn [x] (nil? x)) 0)[1@t[1@r[1@u[1@e[1P)user=> [K((fn [x] (nil? x)) true)
+false
+user=> [Kuser=> [Kuser=> ((fn [x] (nil? x)) true)[1P[1P[1P[1P)n)i)l)user=> [K((fn [x] (nil? x)) nil)
+true
+user=> [Kuser=> [Kuser=> ((fn [][] 17.2)user=> ((fn [] 17.2))user=> ((fn [] 17.2))user=> [K((fn [] 17.2))
+17.2
+user=> [Kuser=> [Kuser=> exit    
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 11:53:58-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-10 11:55:08-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (def triple (fn [x][x] (* x 3)(* x 3))(fn [x] (* x 3)))user=> (def triple (fn [x] (* x 3)))user=> [K(def triple (fn [x] (* x 3)))
+[K#'user/triple
+user=> [Kuser=> [Kuser=> (triple 4)user=> (triple 4)user=> [K(triple 4)
+12
+user=> [Kuser=> [Kuser=> (#(* % 3)(* % 3) 4)user=> (#(* % 3) 4)user=> [K(#(* % 3) 4)
+12
+user=> [Kuser=> [Kuser=> #(+ ( *         (#(+ (* %1 %1)(* %1 %1) (* %2 %2)(* %2 %2))user=> (#(+ (* %1 %1) (* %2 %2)) 3 4)user=> (#(+ (* %1 %1) (* %2 %2)) 3 4)user=> [K(#(+ (* %1 %1) (* %2 %2)) 3 4)
+25
+user=> [Kuser=> [Kuser=> de  (def sum2Squares #9 (+ (* %1 %1)(* %1 %1) (* %2 %2)(* %2 %2))(+ (* %1 %1) (* %2 %2)))user=> (def sum2Squares #(+ (* %1 %1) (* %2 %2)))user=> [K(def sum2Squares #(+ (* %1 %1) (* %2 %2)))
+#'user/sum2Squares
+user=> [Kuser=> [Kuser=> (sum2Squares 3 4)user=> (sum2Squares 3 4)user=> [K(sum2Squares 3 4)
+25
+user=> [Kuser=> [Kuser=> 
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 11:57:35-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-10 12:00:36-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (( def squareSqaure    uare #(* (* %! %!    1 %1)(* %1 %1) (* %1 %1)(* %1 %1))(* (* %1 %1) (* %1 %1)))user=> (def squareSquare #(* (* %1 %1) (* %1 %1)))user=> [K(def squareSquare #(* (* %1 %1) (* %1 %1)))
+#'user/squareSquare
+user=> [Kuser=> [Kuser=> (sqa uareSquare 2 3 2)user=> (squareSquare 2)user=> [K(squareSquare 2)
+16
+user=> [Kuser=> [Kuser=> (squareSquare 2)[1@-user=> [K(squareSquare -2)
+16
+user=> [Kuser=> [Kuser=> (squareSquare 3)user=> (squareSquare 3)user=> [K(squareSquare 3)
+81
+user=> [Kuser=> [Kuser=> (squareSquare 3)[1@-user=> [K(squareSquare -3)
+81
+user=> [Kuser=> [Kuser=> 
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 12:01:37-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-10 12:03:50-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (map inc [1 2 3 4][1 2 3 4])user=> (map inc [1 2 3 4])user=> [K(map inc [1 2 3 4])
+(2 3 4 5)
+user=> [Kuser=> [Kuser=> (map - [1 2 3 4][1 2 3 4])user=> (map - [1 2 3 4])user=> [K(map - [1 2 3 4])
+(-1 -2 -3 -4)
+user=> [Kuser=> [Kuser=> (map - [1 2 3 4][1 2 3 4] [1 2 3 4][1 2 3 4])user=> (map - [1 2 3 4] [1 2 3 4])user=> [K(map - [1 2 3 4] [1 2 3 4])
+(0 0 0 0)
+user=> [Kuser=> [Kuser=> map even        (map even? [1 2 3 4][1 2 3 4])user=> (map even? [1 2 3 4])user=> [K(map even? [1 2 3 4])
+(false true false true)
+user=> [Kuser=> [Kuser=> (map str ["a" "b" "c"]["a" "b" "c"] ["A" "B" "C"]["A" "B" "C"])user=> (map str ["a" "b" "c"] ["A" "B" "C"])user=> [K(map str ["a" "b" "c"] ["A" "B" "C"])
+("aA" "bB" "cC")
+user=> [Kuser=> [Kuser=> (map count [[11][11]][[11]]  [11 22][11 22] [11 22 33][11 22 33]]user=> (map count [[11] [11 22] [11 22 33]])user=> (map count [[11] [11 22] [11 22 33]])user=> [K(map count [[11] [11 22] [11 22 33]])
+(1 2 3)
+user=> [Kuser=> [Kuser=> (map + [1 2 3 4][1 2 3 4] [1 2 3 4][1 2 3 4])user=> (map + [1 2 3 4] [1 2 3 4])user=> [K(map + [1 2 3 4] [1 2 3 4])
+(2 4 6 8)
+user=> [Kuser=> [Kuser=> (map * [1 2 3 4][1 2 3 4] [1 2 3 4][1 2 3 4])user=> (map * [1 2 3 4] [1 2 3 4])user=> [K(map * [1 2 3 4] [1 2 3 4])
+(1 4 9 16)
+user=> [Kuser=> [Kuser=> (Math/abs -3)user=> (Math/abs -3)user=> [K(Math/abs -3)
+3
+user=> [Kuser=> [Kuser=> (map Math/abs [-1 2 -3 4 -5][-1 2 -3 4 -5]_ )user=> (map Math/abs [-1 2 -3 4 -5])user=> [K(map Math/abs [-1 2 -3 4 -5])
+Syntax error compiling at (REPL:1:1).
+Unable to find static field: abs in class java.lang.Math
+user=> [Kuser=> [Kuser=> (map (fn [x][x] (if (< x 0)(< x 0) (- x0 )(- x) x)(if (< x 0) (- x) x))user=> (map (fn [x] (if (< x 0) (- x) x)) [-1 2 -3 4 -5][-1 2 -3 4 -5])user=> (map (fn [x] (if (< x 0) (- x) x)) [-1 2 -3 4 -5])user=> [K(map (fn [x] (if (< x 0) (- x) x)) [-1 2 -3 4 -5])
+[K(1 2 3 4 5)
+user=> [Kuser=> [Kuser=> (def  n subs t ract-n [n seqiemce     uence][n sequence] (map (fn [x][x] (- x n)(- x n))(fn [x] (- x n)) sequence)(map (fn [x] (- x n)) sequence) )user=> (defn subract-n [n sequence] (map (fn [x] (- x n)) sequence) )  )user=> (defn subract-n [n sequence] (map (fn [x] (- x n)) sequence))user=> [K(defn subract-n [n sequence] (map (fn [x] (- x n)) sequence))
+#'user/subract-n
+user=> [Kuser=> [Kuser=> (subtract  -n 2 [5 6 7 8][5 6 7 8])user=> (subtract-n 2 [5 6 7 8])user=> [K(subtract-n 2 [5 6 7 8])
+Syntax error compiling at (REPL:1:1).
+Unable to resolve symbol: subtract-n in this context
+user=> [Kuser=> [Kuser=> (subtract-n 2 [5 6 7 8])[1P[K(subract-n 2 [5 6 7 8])
+(3 4 5 6)
+user=> [Kuser=> [Kuser=> (filter odd? [1 2 3 4][1 2 3 4])user=> (filter odd? [1 2 3 4])user=> [K(filter odd? [1 2 3 4])
+(1 3)
+user=> [Kuser=> [Kuser=> (filte  r even? [1 2 3 4][1 2 3 4])user=> (filter even? [1 2 3 4])user=> [K(filter even? [1 2 3 4])
+(2 4)
+user=> [Kuser=> [Kuser=> (filter neg? [1 2 3 4][1 2 3 4])user=> (filter neg? [1 2 3 4])user=> [K(filter neg? [1 2 3 4])
+()
+user=> [Kuser=> [Kuser=> (filter neg? [-1 1 -2 2 -3 3][-1 1 -2 2 -3 3])user=> (filter neg? [-1 1 -2 2 -3 3])user=> [K(filter neg? [-1 1 -2 2 -3 3])
+(-1 -2 -3)
+user=> [Kuser=> [Kuser=> (filter pos? [0 -1 1 -2 2 -3 3][-1 1 -2 2 -3 3])user=> (filter pos? [-1 1 -2 2 -3 3])user=> [K(filter pos? [-1 1 -2 2 -3 3])
+(1 2 3)
+user=> [Kuser=> [Kuser=> (filter (fn [x][x] (and (pos? x)(pos? x) (even? x)(even? x))(and (pos? x) (even? x)))user=> (filter (fn [x] (and (pos? x) (even? x))) [1 -1 1 -2 2 -3 3 -4 4][-1 1 -2 2 -3 3 -4 4])user=> (filter (fn [x] (and (pos? x) (even? x))) [-1 1 -2 2 -3 3 -4 4])user=> [K(filter (fn [x] (and (pos? x) (even? x))) [-1 1 -2 2 -3 3 -4 4])
+(2 4)
+user=> [Kuser=> [Kuser=> (filter (fn [x][x] )(fn [x] )an   (and (neg? x)(neg? x) (odd? x)(odd? x))(and (neg? x) (odd? x)))user=> (filter (fn [x] (and (neg? x) (odd? x))) [-1 1 -2 2 -3 3 -4 4][-1 1 -2 2 -3 3 -4 4])user=> (filter (fn [x] (and (neg? x) (odd? x))) [-1 1 -2 2 -3 3 -4 4])user=> [K(filter (fn [x] (and (neg? x) (odd? x))) [-1 1 -2 2 -3 3 -4 4])
+(-1 -3)
+user=> [Kuser=> [Kuser=> (filter (fn [x] (and (neg? x) (odd? x))) [-1 1 -2 2 -3 3 -4 4])[1P[1P[1P[1P[1@o[1@r[1@ user=> [K(filter (fn [x] (or (neg? x) (odd? x))) [-1 1 -2 2 -3 3 -4 4])
+(-1 1 -2 -3 3 -4)
+user=> [Kuser=> [Kuser=> exit    
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 12:12:12-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-10 12:25:34-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ clojure
+[KClojure 1.10.1
+[K(filter (fn [x] (or (neg? x) (odd? x))) [-1 1 -2 2 -3 3 -4 4])[Kuser=> [Kuser=> (filter (fn [x] (or (neg? x) (odd? x))) [-1 1 -2 2 -3 3 -4 4])                                                              (defn negate [sequence[ ][sequence] (map (fn [x][x] (* x -1)(* x -1))(fn [x] (* x -1)) see quence )user=> (defn negate [sequence] (map (fn [x] (* x -1)) sequence ))user=> (defn negate [sequence] (map (fn [x] (* x -1)) sequence ))user=> [K(defn negate [sequence] (map (fn [x] (* x -1)) sequence ))
+[K#'user/negate
+user=> [Kuser=> [Kuser=> (negate [-1 2 ][-1 2 ]30   -3][-1 2 -3])user=> (negate [-1 2 -3])user=> [K(negate [-1 2 -3])
+(1 -2 3)
+user=> [Kuser=> [Kuser=> (negate [4 -5 6][4 -5 6])user=> (negate [4 -5 6])user=> [K(negate [4 -5 6])
+(-4 5 -6)
+user=> [Kuser=> [Kuser=> 
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 12:26:18-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-10 12:32:54-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ clojure
+[K[K([KClojure 1.10.1
+[K(r[Kuser=> [Kuser=> (reduce + [1 2 3][1 2 3])user=> (reduce + [1 2 3])user=> [K(reduce + [1 2 3])
+6
+user=> [Kuser=> [Kuser=> (reduce + '(1 2 3)(1 2 3))user=> [K(reduce + '(1 2 3))
+6
+user=> [Kuser=> [Kuser=> (reduce max [1 2 3][1 2 3])user=> (reduce max [1 2 3])user=> [K(reduce max [1 2 3])
+3
+user=> [Kuser=> [Kuser=> r (reudce    duec  ce conj [1 2 3][1 2 3] [4 5 6][4 5 6])user=> (reduce conj [1 2 3] [4 5 6])user=> [K(reduce conj [1 2 3] [4 5 6])
+[1 2 3 4 5 6]
+user=> [Kuser=> [Kuser=> (reduce + { { [ 1 2 3 4 5          1 2 3 4 5][1 2 3 4 5])user=> (reduce + [1 2 3 4 5])user=> [K(reduce + [1 2 3 4 5])
+15
+user=> [Kuser=> [Kuser=> (reduce + 1 [2 3 4 5][2 3 4 5])user=> (reduce + 1 [2 3 4 5])user=> [K(reduce + 1 [2 3 4 5])
+15
+user=> [Kuser=> [Kuser=> (reduce + '(2 3 4 5)(2 3 4 5))user=> [K(reduce + '(2 3 4 5))
+14
+user=> [Kuser=> [Kuser=> (reduce         (reduce + '(2 3 4 5)) [1@ [1@1 [1@ [1Puser=> [K(reduce + 1 '(2 3 4 5))
+15
+user=> [Kuser=> [Kuser=> (reduce + 1 '(2 3 4 5))[2P'(2 3 4 5))[2@1 '(2 3 4 5))user=> [K(reduce max 4   5 [4 3 2 1][4 3 2 1])user=> (reduce max 5 [4 3 2 1])user=> [K(reduce max 5 [4 3 2 1])
+5
+user=> [Kuser=> [Kuser=> (reduce bit-or [1 2 3 4][1 2 3 4])user=> (reduce bit-or [1 2 3 4])user=> [K(reduce bit-or [1 2 3 4])
+7
+user=> [Kuser=> [Kuser=> (reduce str ["a" "b" "c' "]["a" "b" "c"]0 )user=> (reduce str ["a" "b" "c"])user=> [K(reduce str ["a" "b" "c"])
+"abc"
+user=> [Kuser=> [Kuser=> (reduce + 1 2 [3  4  4 5][3 4 5])user=> (reduce + 1 2 [3 4 5])user=> [K(reduce + 1 2 [3 4 5])
+Execution error (ArityException) at user/eval23 (REPL:1).
+Wrong number of args (4) passed to: clojure.core/reduce
+user=> [Kuser=> [Kuser=> (reduce + 1 '(2 3 4)(2 3 4) 5)user=> [K(reduce + 1 '(2 3 4) 5)
+Execution error (ArityException) at user/eval25 (REPL:1).
+Wrong number of args (4) passed to: clojure.core/reduce
+user=> [Kuser=> [Kuser=> (defn csv [seq][seq] (reduce (fn [a b][a b] (str a "," b)(str a "," b))(fn [a b] (str a "," b)) seq)user=> (defn csv [seq] (reduce (fn [a b] (str a "," b)) seq))user=> (defn csv [seq] (reduce (fn [a b] (str a "," b)) seq))user=> [K(defn csv [seq] (reduce (fn [a b] (str a "," b)) seq))
+[K#'user/csv
+user=> [Kuser=> [Kuser=> (s csv [11 2  2 33][11 22 33])user=> (csv [11 22 33])user=> [K(csv [11 22 33])
+"11,22,33"
+user=> [Kuser=> [Kuser=> (defn totalItems [seqofSeqs[1P[1@OfSeqs][seqOfSeqs] (reduce + (a map count S seqofSeqs)(map count seqofSeqs))(reduce + (map count seqofSeqs)))user=> (defn totalItems [seqOfSeqs] (reduce + (map count seqofSeqs)))user=> [K(defn totalItems [seqOfSeqs] (reduce + (map count seqofSeqs)))
+Syntax error compiling at (REPL:1:40).
+Unable to resolve symbol: seqofSeqs in this context
+user=> [Kuser=> [Kuser=> (defn totalItems [seqOfSeqs] (reduce + (map count seqofSeqs)))[1P[1@Ouser=> [K(defn totalItems [seqOfSeqs] (reduce + (map count seqOfSeqs)))
+#'user/totalItems
+user=> [Kuser=> [Kuser=> (total  Items [["ann   Ann"]["Ann"] ["Bob" "Chris"]["Bob" "Chris"] ["Dan" "Eve "F   " "Fred"]["Dan" "Eve" "Fred"]]user=> (totalItems [["Ann"] ["Bob" "Chris"] ["Dan" "Eve" "Fred"]])user=> (totalItems [["Ann"] ["Bob" "Chris"] ["Dan" "Eve" "Fred"]])user=> [K(totalItems [["Ann"] ["Bob" "Chris"] ["Dan" "Eve" "Fred"]])
+6
+user=> [Kuser=> [Kuser=> 
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 12:36:11-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-10 12:39:31-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> d (defn sumSque ares [seqOfSequs  s][seqOfSeqs] (reduce + (map * seqOfSequs  s seqOfSeqs)(map * seqOfSeqs seqOfSeqs))user=> (defn sumSquares [seqOfSeqs] (reduce + (map * seqOfSeqs seqOfSeqs)))user=> (defn sumSquares [seqOfSeqs] (reduce + (map * seqOfSeqs seqOfSeqs)))user=> [K(defn sumSquares [seqOfSeqs] (reduce + (map * seqOfSeqs seqOfSeqs)))
+[K#'user/sumSquares
+user=> [Kuser=> [Kuser=> (sum S  Squares '(1 2 3)(1 2 3))user=> [K(sumSquares '(1 2 3))
+14
+user=> [Kuser=> [Kuser=> (sumSquares '(1 2 3 4 5)(1 2 3 4 5))user=> [K(sumSquares '(1 2 3 4 5))
+55
+user=> [Kuser=> [Kuser=> (sumSquares [-1 [2    -2 -3 0 1][-1 -2 -3 0 1])user=> (sumSquares [-1 -2 -3 0 1])user=> [K(sumSquares [-1 -2 -3 0 1])
+15
+user=> [Kuser=> [Kuser=> 
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 12:40:26-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-10 12:41:16-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (defn incMaker [incva  Value][incValue] #(+ % inv cValue)(+ % incValue))user=> (defn incMaker [incValue] #(+ % incValue))user=> [K(defn incMaker [incValue] #(+ % incValue))
+[K#'user/incMaker
+user=> [Kuser=> [Kuser=> (def inc4 5 (incMaker 5)(incMaker 5))user=> (def inc5 (incMaker 5))user=> [K(def inc5 (incMaker 5))
+#'user/inc5
+user=> [Kuser=> [Kuser=> (inc5 5)(inc5 5)[K(inc5 5)
+10
+user=> [Kuser=> [Kuser=> (inc5 0)(inc5 0)[K(inc5 0)
+5
+user=> [Kuser=> [Kuser=> (defn greetingBuilder [greeting[][]  ][greeting] (fn vi  [visitor][visitor] (str greeting ", " visitr or  "!")[A> (defn greetingBuilder [greeting] (fn [visitor] 
+ "!"))[A (defn greetingBuilder [greeting] 
+ "!")))[A
+ "!")))[A[K
+[K[Auser=> (defn greetingBuilder [greeting] (fn [visitor] (str greeting ", " visitor "!")))
+#'user/greetingBuilder
+user=> [Kuser=> [Kuser=> (def csGreeting (greetingBuilder "Welcome to CS @1  214")user=> (def csGreeting (greetingBuilder "Welcome to CS 214"))user=> (def csGreeting (greetingBuilder "Welcome to CS 214"))user=> [K(def csGreeting (greetingBuilder "Welcome to CS 214"))
+#'user/csGreeting
+user=> [Kuser=> [Kuser=> (def englishGreeting (greeting  Builder "Hello")(greetingBuilder "Hello"))user=> (def englishGreeting (greetingBuilder "Hello"))user=> [K(def englishGreeting (greetingBuilder "Hello"))
+#'user/englishGreeting
+user=> [Kuser=> [Kuser=> (def frenchGreeting (greetingBuilder "Bonjour")(greetingBuilder "Bonjour"))user=> (def frenchGreeting (greetingBuilder "Bonjour"))user=> [K(def frenchGreeting (greetingBuilder "Bonjour"))
+#'user/frenchGreeting
+user=> [Kuser=> [Kuser=> (cs q  Greeting "Ann")user=> (csGreeting "Ann")user=> [K(csGreeting "Ann")
+"Welcome to CS 214, Ann!"
+user=> [Kuser=> [Kuser=> (englishGreeting "Chris")user=> (englishGreeting "Chris")user=> [K(englishGreeting "Chris")
+"Hello, Chris!"
+user=> [Kuser=> [Kuser=> (frenchGreeting "Chris")user=> (frenchGreeting "Chris")user=> [K(frenchGreeting "Chris")
+"Bonjour, Chris!"
+user=> [Kuser=> [Kuser=> 
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 12:43:29-05:00 [COMMAND_EXIT_CODE="0"]

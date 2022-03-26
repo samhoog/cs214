@@ -1,0 +1,21 @@
+Script started on 2022-02-10 11:52:55-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> ((fn [x y z][x y z] )user=> ((fn [x y z] ) ( +    + x y z)(+ x y z))user=> ((fn [x y z] (+ x y z)) 2 5 7)user=> ((fn [x y z] (+ x y z)) 2 5 7)user=> [K((fn [x y z] (+ x y z)) 2 5 7)
+[K14
+user=> [Kuser=> [Kuser=> ((fn [x y z] (+ x y z)) 2 5 7)[1@- [1@1user=> [K((fn [x y z] (+ x y z)) 12 5 -7)
+10
+user=> [Kuser=> [Kuser=> ((fn [x][x] (N nil? x)(nil? x))user=> ((fn [x] (nil? x)) 4)user=> ((fn [x] (nil? x)) 4)user=> [K((fn [x] (nil? x)) 4)
+false
+user=> [Kuser=> [Kuser=> ((fn [x] (nil? x)) 4)[1@0[1P)user=> [K((fn [x] (nil? x)) 0)
+false
+user=> [Kuser=> [Kuser=> ((fn [x] (nil? x)) 0)[1@t[1@r[1@u[1@e[1P)user=> [K((fn [x] (nil? x)) true)
+false
+user=> [Kuser=> [Kuser=> ((fn [x] (nil? x)) true)[1P[1P[1P[1P)n)i)l)user=> [K((fn [x] (nil? x)) nil)
+true
+user=> [Kuser=> [Kuser=> ((fn [][] 17.2)user=> ((fn [] 17.2))user=> ((fn [] 17.2))user=> [K((fn [] 17.2))
+17.2
+user=> [Kuser=> [Kuser=> exit    
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 11:53:58-05:00 [COMMAND_EXIT_CODE="0"]

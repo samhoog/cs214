@@ -1,0 +1,19 @@
+Script started on 2022-02-10 11:55:08-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (def triple (fn [x][x] (* x 3)(* x 3))(fn [x] (* x 3)))user=> (def triple (fn [x] (* x 3)))user=> [K(def triple (fn [x] (* x 3)))
+[K#'user/triple
+user=> [Kuser=> [Kuser=> (triple 4)user=> (triple 4)user=> [K(triple 4)
+12
+user=> [Kuser=> [Kuser=> (#(* % 3)(* % 3) 4)user=> (#(* % 3) 4)user=> [K(#(* % 3) 4)
+12
+user=> [Kuser=> [Kuser=> #(+ ( *         (#(+ (* %1 %1)(* %1 %1) (* %2 %2)(* %2 %2))user=> (#(+ (* %1 %1) (* %2 %2)) 3 4)user=> (#(+ (* %1 %1) (* %2 %2)) 3 4)user=> [K(#(+ (* %1 %1) (* %2 %2)) 3 4)
+25
+user=> [Kuser=> [Kuser=> de  (def sum2Squares #9 (+ (* %1 %1)(* %1 %1) (* %2 %2)(* %2 %2))(+ (* %1 %1) (* %2 %2)))user=> (def sum2Squares #(+ (* %1 %1) (* %2 %2)))user=> [K(def sum2Squares #(+ (* %1 %1) (* %2 %2)))
+#'user/sum2Squares
+user=> [Kuser=> [Kuser=> (sum2Squares 3 4)user=> (sum2Squares 3 4)user=> [K(sum2Squares 3 4)
+25
+user=> [Kuser=> [Kuser=> 
+[K]0;sth6@gold19: ~/cs/214/labs/05/clojure[01;32msth6@gold19[00m:[01;34m~/cs/214/labs/05/clojure[00m$ exit
+
+Script done on 2022-02-10 11:57:35-05:00 [COMMAND_EXIT_CODE="0"]
