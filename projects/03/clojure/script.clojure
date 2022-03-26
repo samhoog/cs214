@@ -1,0 +1,81 @@
+Script started on 2022-01-31 16:06:01-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ cat src/letter_grades.clj
+;;;; letter_grades.clj calculates your letter grade
+;;;;
+;;;; Input: The grade average
+;;;; Precondition: The average is an integer 0-100
+;;;; Output: The corrosponding letter grade
+;;;;
+;;;; Completed by: Sam Hoogewind
+;;;; Date: January 31, 2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns letter_grades)                    ; name the program
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; letterGrade() converts a grade average to it's letter grade.
+;;;
+;;; Receive: average, an int.
+;;; PRE: average is an int between 0 and 100
+;;; Return: the grade corrosponding to the average
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn letterGrade[average]
+  (cond
+    (= (quot average 10) 10) 'A
+    (= (quot average 10) 9)  'A
+    (= (quot average 10) 8)  'B
+    (= (quot average 10) 7)  'C
+    (= (quot average 10) 6)  'D
+    :else                    'F
+  )
+)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Function -main() test-drives our letterGrade() function.
+;;; Input: average {your grade average}.
+;;; Output: the grade corrosponding to average.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -main []
+ (print "\nEnter your grade average: ") (flush)
+ (let
+    [ average (Integer/parseInt (read-line)) ] ; read average (an int))
+    (println (letterGrade average) "\n")        ; display its grade
+
+ )
+)
+
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ clojure -m cir   letter_grades.cl   
+
+Enter your grade average: 95
+A 
+
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ clojure -m letter_grades
+
+Enter your grade average: 83
+B 
+
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ clojure -m letter_grades
+
+Enter your grade average: 75 7
+C 
+
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ clojure -m letter_grades
+6
+Enter your grade average: 4
+D 
+
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ clojure -m letter_grades
+
+Enter your grade average: 38
+F 
+
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ e clojure -m letter_grades
+100
+Enter your grade average: 
+A 
+
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ exit
+exit
+
+Script done on 2022-01-31 16:06:42-05:00 [COMMAND_EXIT_CODE="0"]

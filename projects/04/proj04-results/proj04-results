@@ -1,0 +1,225 @@
+Script started on 2022-02-04 14:19:20-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold07: ~/cs/214/projects/04/java[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/java[00m$ cat factorial.java 
+/* factorial.java calculates factorials
+ *
+ * Input: n, an int
+ * PRE: n > 0.
+ * Output: The factorial of n
+ * Completed by: Sam Hoogewind
+ * Date: February 4, 2022
+ ********************************************************/
+import java.util.Scanner; 		// Get input
+
+class factorial {
+
+    public static double factorial(int n) { // calculate the factorial
+        double answer = 1.0;
+
+        for (int i = 2; i <= n; i++) {
+            answer *= i;
+        }
+        return answer;
+    }
+
+    public static void main(String[] args){
+      Scanner keyboard = new Scanner(System.in);
+      System.out.println("\nTo compute n!, enter n: "); // prompt user
+      int n;
+      n = keyboard.nextInt();
+
+      System.out.println(n + "! = " + factorial(n)); // output result
+    }
+  }
+
+
+]0;sth6@gold07: ~/cs/214/projects/04/java[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/java[00m$ javac -deprecation factorial.java 
+]0;sth6@gold07: ~/cs/214/projects/04/java[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/java[00m$ java factorial
+
+To compute n!, enter n: 
+5
+5! = 120.0
+]0;sth6@gold07: ~/cs/214/projects/04/java[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/java[00m$ java factorial
+
+To compute n!, enter n: 
+6
+6! = 720.0
+]0;sth6@gold07: ~/cs/214/projects/04/java[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/java[00m$ java factorial
+
+To compute n!, enter n: 
+3
+3! = 6.0
+]0;sth6@gold07: ~/cs/214/projects/04/java[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/java[00m$ exit
+exit
+
+Script done on 2022-02-04 14:19:44-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-04 15:11:35-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold07: ~/cs/214/projects/04/ada[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/ada[00m$ cat factorial.adb
+-- factorial.adb calculates a factorial
+--
+-- Input: n, an integer
+-- Precondition: n is 0 or greater
+-- Output: The factorial of n
+--
+-- Completed by: Sam Hoogewind
+-- Date: January 31, 2022
+----------------------------------------------------
+
+with Ada.Text_IO, Ada.Integer_Text_IO;
+use  Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure factorial is
+
+   answer : Integer := 1;
+   i : Integer;
+   n : Integer;
+
+   function calc_factorial(n : integer) return Integer
+   is
+      begin
+        for i in 2..n loop
+            answer := answer * i; -- calculate the factorial
+        end loop;
+
+        return answer; 
+   end calc_factorial;
+
+begin                                          
+   Put("To compute n!, enter n: ");              -- Prompt for input
+   Get(n);                                       -- Input
+   Put(n); Put("! = "); Put(calc_factorial(n));  -- Convert and output
+   New_Line;
+end factorial;
+
+]0;sth6@gold07: ~/cs/214/projects/04/ada[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/ada[00m$ gnatmake factorial
+gnatmake: "factorial" up to date.
+]0;sth6@gold07: ~/cs/214/projects/04/ada[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/ada[00m$ ./factorial
+To compute n!, enter n: 0
+          0! =           1
+]0;sth6@gold07: ~/cs/214/projects/04/ada[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/ada[00m$ ./factorial
+To compute n!, enter n: 5
+          5! =         120
+]0;sth6@gold07: ~/cs/214/projects/04/ada[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/ada[00m$ ./factorial
+To compute n!, enter n: 7
+          7! =        5040
+]0;sth6@gold07: ~/cs/214/projects/04/ada[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/ada[00m$ exit
+exit
+
+Script done on 2022-02-04 15:11:57-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-04 14:47:13-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold07: ~/cs/214/projects/04/clojure[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/clojure[00m$ cat sc rc/factorial.clj 
+;;;; factorial.clj calculates factorials
+;;;;
+;;;; Input: n, an integer
+;;;; Precondition: n > 0
+;;;; Output: The factorial of n
+;;;;
+;;;; Completed by: Sam Hoogewind
+;;;; Date: February 4, 2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns factorial)                                 ; name the program
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; factorial() recursively calculates the factorial.
+;;; Receive: n, the factorial you want to calculate
+;;;          current, the increment value you are currently on
+;;;          total, the sum total you have
+;;; Precondition: n > 0, current = 2 and total = 1 (since 0! = 1)
+;;; Output: The factorial of n
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; direct-recursive version
+(defn factorial [n current total]
+  (if (> current n) ; once the current value is bigger than n, you're done
+    (do
+        (printf "%s! = %s \n" n total) ; print the results
+        )
+    )
+  
+  (if (<= current n)
+    (do
+      (recur n (+ current 1) (* total current)) ; recur through each value
+    )
+  )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; -main is a 'driver' for the factorial() function.
+;;; Input: start, stop and increment.
+;;; Output: The factorial of n
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn -main []
+ (println "\nTo compute n!, enter n: ") ; get user input
+ (let
+    [ n (int (read))
+      current 2
+      total 1
+    ] 
+    (factorial n current total) ; start with set values for factorials
+ )
+)
+
+]0;sth6@gold07: ~/cs/214/projects/04/clojure[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/clojure[00m$ clojure -m factorial
+
+To compute n!, enter n: 
+5
+5! = 120 
+]0;sth6@gold07: ~/cs/214/projects/04/clojure[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/clojure[00m$ clojure -m factorial
+
+To compute n!, enter n: 
+3
+3! = 6 
+]0;sth6@gold07: ~/cs/214/projects/04/clojure[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/clojure[00m$ clojure -m factorial
+8
+To compute n!, enter n: 
+
+8! = 40320 
+]0;sth6@gold07: ~/cs/214/projects/04/clojure[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/clojure[00m$ exit
+exit
+
+Script done on 2022-02-04 14:47:30-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-04 14:54:03-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold07: ~/cs/214/projects/04/ruby[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/ruby[00m$ cat factorial.rb 
+#! /usr/bin/ruby
+# factorial.rb calculates the factorial of n
+#
+# Completed by: Sam Hoogewind
+# Date: February 4, 2022
+#
+# Input:  n
+# Precondition: n is 0 or greater
+# Output: the factorial of n
+
+
+def factorial(n)
+    answer = 1 
+    for i in 2..n
+        answer *= i # calculate the factorial
+    end
+    return answer
+end
+
+if __FILE__ == $0
+    print "\nTo compute n!, enter n: " # get input
+    n = gets.to_i
+     
+    puts "#{ n }! = #{ factorial(n) }" # output n!
+ end
+ 
+ ]0;sth6@gold07: ~/cs/214/projects/04/ruby[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/ruby[00m$ ruby factorial.rb
+
+To compute n!, enter n: 3
+3! = 6
+]0;sth6@gold07: ~/cs/214/projects/04/ruby[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/ruby[00m$ ruby factorial.rb
+
+To compute n!, enter n: 0
+0! = 1
+]0;sth6@gold07: ~/cs/214/projects/04/ruby[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/ruby[00m$ ruby factorial.rb
+
+To compute n!, enter n: 6
+6! = 720
+]0;sth6@gold07: ~/cs/214/projects/04/ruby[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/ruby[00m$ exit
+exit
+
+Script done on 2022-02-04 14:54:27-05:00 [COMMAND_EXIT_CODE="0"]

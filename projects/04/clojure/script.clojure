@@ -1,0 +1,74 @@
+Script started on 2022-02-04 14:47:13-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@gold07: ~/cs/214/projects/04/clojure[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/clojure[00m$ cat sc rc/factorial.clj 
+;;;; factorial.clj calculates factorials
+;;;;
+;;;; Input: n, an integer
+;;;; Precondition: n > 0
+;;;; Output: The factorial of n
+;;;;
+;;;; Completed by: Sam Hoogewind
+;;;; Date: February 4, 2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns factorial)                                 ; name the program
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; factorial() recursively calculates the factorial.
+;;; Receive: n, the factorial you want to calculate
+;;;          current, the increment value you are currently on
+;;;          total, the sum total you have
+;;; Precondition: n > 0, current = 2 and total = 1 (since 0! = 1)
+;;; Output: The factorial of n
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; direct-recursive version
+(defn factorial [n current total]
+  (if (> current n) ; once the current value is bigger than n, you're done
+    (do
+        (printf "%s! = %s \n" n total) ; print the results
+        )
+    )
+  
+  (if (<= current n)
+    (do
+      (recur n (+ current 1) (* total current)) ; recur through each value
+    )
+  )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; -main is a 'driver' for the factorial() function.
+;;; Input: start, stop and increment.
+;;; Output: The factorial of n
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn -main []
+ (println "\nTo compute n!, enter n: ") ; get user input
+ (let
+    [ n (int (read))
+      current 2
+      total 1
+    ] 
+    (factorial n current total) ; start with set values for factorials
+ )
+)
+
+]0;sth6@gold07: ~/cs/214/projects/04/clojure[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/clojure[00m$ clojure -m factorial
+
+To compute n!, enter n: 
+5
+5! = 120 
+]0;sth6@gold07: ~/cs/214/projects/04/clojure[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/clojure[00m$ clojure -m factorial
+
+To compute n!, enter n: 
+3
+3! = 6 
+]0;sth6@gold07: ~/cs/214/projects/04/clojure[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/clojure[00m$ clojure -m factorial
+8
+To compute n!, enter n: 
+
+8! = 40320 
+]0;sth6@gold07: ~/cs/214/projects/04/clojure[01;32msth6@gold07[00m:[01;34m~/cs/214/projects/04/clojure[00m$ exit
+exit
+
+Script done on 2022-02-04 14:47:30-05:00 [COMMAND_EXIT_CODE="0"]

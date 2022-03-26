@@ -1,0 +1,430 @@
+Script started on 2022-02-15 11:56:23-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="189" LINES="12"]
+]0;sth6@gold16: ~/cs/214/projects/06/java[01;32msth6@gold16[00m:[01;34m~/cs/214/projects/06/java[00m$ javac -[K[K[K[K[K[K[Kcat Quadratic.java 
+/* Quadratic.java is a class and program that calculates the 
+ * quadratic roots of an equation
+ * 
+ * Completed by: Sam Hoogewind
+ * Date: February 15, 2022
+ ***************************************************************/
+
+import java.util.Scanner;
+
+// java class Quadratic
+public class Quadratic
+{
+  // main program
+  public static void main(String[] args)
+    {
+      Scanner keyboard = new Scanner(System.in);
+      // prompt for the equation
+      System.out.println("\nTo calculate the quadratic roots, please enter the equation: ");
+      
+      // prompt for the first coefficient
+      System.out.println("\nEnter the first coefficient: ");
+      double a = keyboard.nextDouble();
+
+      // prompt for the second coefficient
+      System.out.println("\nEnter the second coefficient: ");
+      double b = keyboard.nextDouble();
+
+      // prompt for the third coefficient
+      System.out.println("\nEnter the third coefficient: ");
+      double c = keyboard.nextDouble();
+
+      //Compute roots and print
+      double [] rootList = new double[2];
+      try { // try calculating the roots
+          quadraticRoots(a, b, c, rootList); 
+          System.out.println("\nThe roots of the equations are " + rootList[0] + "\n and " + rootList[1]);
+      } catch (Exception e) { // print an exception if you run into any
+          System.out.println(e);
+      }
+      
+    }
+  
+  /* quadraticRoots() calculates the quadratic roots according to the equation specified
+   * Receive: a, b, c - the coefficients of the equation
+   *          rootList - an array of doubles in which to place results
+   *****************************************************/
+  public static void quadraticRoots(double a, double b, double c, double[] rootList) throws Exception
+   {
+     double root1, root2;
+      if (a != 0) { // if x^2 isn't 0
+         double arg = Math.pow(b, 2.0) - 4 * a * c; // calculate the part under the radical
+         if (arg >= 0) { // if the part under the radical is greater than or equal to 0
+            root1 = (-b + Math.sqrt(arg))/(2*a); // calculate each root, and set them into the array
+            root2 = (-b - Math.sqrt(arg))/(2*a);
+            rootList[0] = root1;
+            rootList[1] = root2;
+         } else { // otherwise you have imaginary numbers, so print an error
+            root1 = root2 = 0.0;
+            rootList[0] = root1;
+            rootList[1] = root2;
+            throw new Exception("\n*** quadraticRoots(): b^2 - 4ac is negative!");
+         }
+      } else { // otherwise x^2 is 0, so print an error
+         root1 = root2 = 0.0;
+         rootList[0] = root1;
+         rootList[1] = root2;
+         throw new Exception("\n*** QuadraticRoots(): a is zero!");
+      }
+   }
+}
+]0;sth6@gold16: ~/cs/214/projects/06/java[01;32msth6@gold16[00m:[01;34m~/cs/214/projects/06/java[00m$ javac -deprecation Quadratic.java 
+]0;sth6@gold16: ~/cs/214/projects/06/java[01;32msth6@gold16[00m:[01;34m~/cs/214/projects/06/java[00m$ java Quadratic
+
+To calculate the quadratic roots, please enter the equation: 
+
+Enter the first coefficient: 
+0
+
+Enter the second coefficient: 
+5
+
+Enter the third coefficient: 
+10
+java.lang.Exception: 
+*** QuadraticRoots(): a is zero!
+]0;sth6@gold16: ~/cs/214/projects/06/java[01;32msth6@gold16[00m:[01;34m~/cs/214/projects/06/java[00m$ java Quadratic
+
+To calculate the quadratic roots, please enter the equation: 
+
+Enter the first coefficient: 
+1
+
+Enter the second coefficient: 
+1
+
+Enter the third coefficient: 
+10
+java.lang.Exception: 
+*** quadraticRoots(): b^2 - 4ac is negative!
+]0;sth6@gold16: ~/cs/214/projects/06/java[01;32msth6@gold16[00m:[01;34m~/cs/214/projects/06/java[00m$ java Quadratic
+
+To calculate the quadratic roots, please enter the equation: 
+
+Enter the first coefficient: 
+2
+
+Enter the second coefficient: 
+5
+
+Enter the third coefficient: 
+2
+
+The roots of the equations are -0.5
+ and -2.0
+]0;sth6@gold16: ~/cs/214/projects/06/java[01;32msth6@gold16[00m:[01;34m~/cs/214/projects/06/java[00m$ java Quadratic
+
+To calculate the quadratic roots, please enter the equation: 
+
+Enter the first coefficient: 
+2
+
+Enter the second coefficient: 
+6
+
+Enter the third coefficient: 
+2
+
+The roots of the equations are -0.3819660112501051
+ and -2.618033988749895
+]0;sth6@gold16: ~/cs/214/projects/06/java[01;32msth6@gold16[00m:[01;34m~/cs/214/projects/06/java[00m$ exit
+
+Script done on 2022-02-15 11:57:06-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-18 13:04:20-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="189" LINES="12"]
+]0;sth6@gold18: ~/cs/214/projects/06/ada[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/ada[00m$ cat quadratic.adb
+-- quadratic.adb calculates the roots of a quadratic equation
+-- Input: The three coefficients of the equation
+-- Output: The roots of the equation, or a corrosponding error
+--
+-- Completed by: Sam Hoogewind
+-- Date: February 15. 2022
+--------------------------------------------------------------
+
+with Ada.Text_IO, Ada.Numerics.Elementary_Functions, Ada.Float_Text_IO;
+use  Ada.Text_IO, Ada.Numerics.Elementary_Functions, Ada.Float_Text_IO;
+
+procedure quadratic is
+
+   a, b, c, arg, Root1, Root2 : Float; -- instigate the variables
+
+   ------------------------------------------------
+   -- quadratic() calculates the quadratic roots according to the equation specified          
+   -- Receive: a, b, c, the coefficients of the equation       
+   -- Passback: First_Root - the first quadratic root,
+   --           Second_Root - the second quadratic root.
+   ------------------------------------------------
+   procedure quadratic(a : in Float; b : in Float; c : in Float; First_Root : out Float; Second_Root : out Float)
+   is
+      begin
+         if a /= 0.0 then -- if x^2 isn't 0
+            arg := b ** 2 - (4.0 * a * c); -- calculate the part under the radical
+            if arg >= 0.0 then -- if the part under the radical is greater than or equal to 0
+               First_Root := (-b + sqrt(arg)) / (2.0 * a); -- calculate each root
+               Second_Root := (-b - sqrt(arg)) / (2.0 * a);
+            else -- otherwise you have imaginary numbers, so print an error abd set the roots to 0
+               Put("quadraticRoots(): b^2 - 4ac is negative! ");
+               First_Root := 0.0;
+               Second_Root := 0.0;
+            end if;
+         else -- otherwise x^2 is 0, so print an error and set the roots to 0
+            Put("quadraticRoots(): a is zero! ");
+            First_Root := 0.0;
+            Second_Root := 0.0;
+         end if;
+
+   end quadratic;
+
+begin
+   Put("To calculate the quadratic roots, please enter the equation: "); -- prompt for the equation
+  
+   Put("Enter the first coefficient: "); -- prompt for the first coefficient
+   Get(a);
+
+   Put("Enter the second coefficient: "); -- prompt for the second coefficient
+   Get(b);
+
+   Put("Enter the third coefficient: "); -- prompt for the third coefficient
+   Get(c);
+
+   quadratic(a, b, c, Root1, Root2); -- compute the results
+
+   if Root1 /= 0.0 and Root2 /= 0.0 then
+      Put("The first root is "); -- output the roots
+      Put(Root1);
+      Put(" and the second root is ");
+      Put(Root2);
+   end if;
+
+end quadratic;
+
+]0;sth6@gold18: ~/cs/214/projects/06/ada[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/ada[00m$ gnatmake quadratic.adb 
+x86_64-linux-gnu-gcc-7 -c quadratic.adb
+x86_64-linux-gnu-gnatbind-7 -x quadratic.ali
+x86_64-linux-gnu-gnatlink-7 quadratic.ali
+]0;sth6@gold18: ~/cs/214/projects/06/ada[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/ada[00m$ ./quadratic 
+To calculate the quadratic roots, please enter the equation: Enter the first coefficient: 0
+Enter the second coefficient: 5
+Enter the third coefficient: 10
+quadraticRoots(): a is zero! 
+]0;sth6@gold18: ~/cs/214/projects/06/ada[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/ada[00m$ ./quadratic 
+To calculate the quadratic roots, please enter the equation: Enter the first coefficient: 1
+Enter the second coefficient: 1
+Enter the third coefficient: 10
+quadraticRoots(): b^2 - 4ac is negative! 
+]0;sth6@gold18: ~/cs/214/projects/06/ada[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/ada[00m$ ./quadratic 
+To calculate the quadratic roots, please enter the equation: Enter the first coefficient: 2
+Enter the second coefficient: 5
+Enter the third coefficient: 2
+The first root is -5.00000E-01 and the second root is -2.00000E+00
+]0;sth6@gold18: ~/cs/214/projects/06/ada[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/ada[00m$ ./quadratic 
+To calculate the quadratic roots, please enter the equation: Enter the first coefficient: 2
+Enter the second coefficient: 6
+Enter the third coefficient: 2
+The first root is -3.81966E-01 and the second root is -2.61803E+00
+]0;sth6@gold18: ~/cs/214/projects/06/ada[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/ada[00m$ exit
+
+Script done on 2022-02-18 13:04:53-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-18 13:01:44-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="189" LINES="12"]
+]0;sth6@gold18: ~/cs/214/projects/06/clojure[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/clojure[00m$ cat src/quadratic.clj 
+;;;; quadratic.clj calculates the roots of a quadratic equation
+;;;; Input: The three coefficients of the equation
+;;;; Output: The roots of the equation, or a corrosponding error
+;;;;
+;;;; Usage: clojure -m quadratic
+;;;;
+;;;; Completed by: Sam Hoogewind
+;;;; Date: February 15. 2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns quadratic)      ; name the program
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; quadraticRoots() calculates the quadratic roots according to the equation specified
+;;; Receive: a, b, c - the coefficients of the equation
+;;; Return: The two quadratic roots or an error
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn quadraticRoots [a b c]
+  (let
+    [ arg (- (* b b) (* (* 4 a) c)) ; calculate the part under the radical
+    ]
+    (if (not= a 0) ; if x^2 isn't 0
+      (do ; if yes, then
+        (if (>= arg 0) ; if the part under the radical is greater than or equal to 0
+          (do ; if yes then
+            (let
+              [ firstRoot (/ (+ (- 0 b) (Math/sqrt arg)) (* 2 a)) ; calculate each root
+                secondRoot (/ (- (- 0 b) (Math/sqrt arg)) (* 2 a))
+              ]
+              (vector firstRoot secondRoot) ; set a vector of the results
+            )
+          )
+          (do ; otherwise you have imaginary numbers, so print an error
+            (print "quadraticRoots(): b^2 - 4ac is negative! \n")
+            (let
+              [ firstRoot 0
+                secondRoot 0
+              ]
+              (vector firstRoot secondRoot) ; set a vector of 0 0 
+            )
+          )
+        )
+      )
+      (do ; otherwise x^2 is 0, so print an error
+        (print "quadraticRoots(): a is zero! \n")
+        (let
+          [ firstRoot 0
+            secondRoot 0
+          ]
+          (vector firstRoot secondRoot) ; set a vector of 0 0
+        )
+      )
+    )
+  )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; main function
+;;; Input: the three coefficients of the equation
+;;; Output: the roots of the equation
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -main []
+  (print "To calculate the quadratic roots, please enter the equation: ") (flush) ; prompt for the equation
+  (print "Enter the first coefficient: ") (flush) ; prompt for the first coefficient
+  (let
+    [ a (read) ]
+    (print "Enter the second coefficient: ") (flush) ; prompt for the second coefficient
+    (let 
+      [ b (read) ]
+      (print "Enter the third coefficient: ") (flush) ; prompt for the third coefficient
+      (let
+       [ c (read)
+        result (quadraticRoots a b c)            ; compute the results
+        root1 (get result 0)                     ; retrieve the two roots
+        root2 (get result 1)                 
+       ] ; display the roots if they aren't 0
+        (if (not= root1 0)
+          (if (not= root2 0)
+            (printf (str "\nThe first root is \"%s\" and the second root is \"%s\"\n\n") root1 root2)
+          )
+        )
+      )
+    )
+  )
+)
+
+]0;sth6@gold18: ~/cs/214/projects/06/clojure[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/clojure[00m$ clojure -m quadratic
+To calculate the quadratic roots, please enter the equation: Enter the first coefficient: 0
+Enter the second coefficient: 5
+Enter the third coefficient: 10
+quadraticRoots(): a is zero! 
+]0;sth6@gold18: ~/cs/214/projects/06/clojure[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/clojure[00m$ clojure -m quadratic
+To calculate the quadratic roots, please enter the equation: Enter the first coefficient: 1
+Enter the second coefficient: 1
+Enter the third coefficient: 10
+quadraticRoots(): b^2 - 4ac is negative! 
+]0;sth6@gold18: ~/cs/214/projects/06/clojure[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/clojure[00m$ clojure -m quadratic
+To calculate the quadratic roots, please enter the equation: Enter the first coefficient: 2
+Enter the second coefficient: 5
+Enter the third coefficient: 2
+
+The first root is "-0.5" and the second root is "-2.0"
+
+]0;sth6@gold18: ~/cs/214/projects/06/clojure[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/clojure[00m$ clojure -m quadratic
+To calculate the quadratic roots, please enter the equation: Enter the first coefficient: 2
+Enter the second coefficient: 6
+Enter the third coefficient: 2
+
+The first root is "-0.3819660112501051" and the second root is "-2.618033988749895"
+
+]0;sth6@gold18: ~/cs/214/projects/06/clojure[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/clojure[00m$ exit
+
+Script done on 2022-02-18 13:02:08-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-02-18 13:03:15-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="189" LINES="12"]
+]0;sth6@gold18: ~/cs/214/projects/06/ruby[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/ruby[00m$ cat r=q[K[K[Kquadratic.rb 
+# quadratic.rb calculates the roots of a quadratic equation
+#
+# Input: The three coefficients of the equation
+# Output: The roots of the equation, or a corrosponding error
+#
+# Completed by: Sam Hoogewind
+# Date: February 15, 2022
+#################################################################
+
+
+# quadraticRoots() calculates the quadratic roots according to the equation specified
+# Receive: a, b, c - the coefficients of the equation
+# Return: The two quadratic roots or an error
+######################################################
+
+def quadraticRoots(a, b, c)
+  if a != 0 # if x^2 isn't 0
+    arg = b ** 2 - (4 * a * c) # calculate the part under the radical
+    if arg >= 0 # if the part under the radical is greater than or equal to 0
+      root1 = (-b + Math.sqrt(arg)) / (2 * a) # calculate each root
+      root2 = (-b - Math.sqrt(arg)) / (2 * a)
+    else # otherwise you have imaginary numbers, so print an error
+      puts "quadraticRoots(): b^2 - 4ac is negative!"
+      root1 = 0
+      root2 = 0
+    end 
+  else # otherwise x^2 is 0, so print an error
+    puts "quadraticRoots(): a is zero!"
+    root1 = 0
+    root2 = 0
+  end
+  results = [root1, root2] # return the results
+end
+
+def main
+  # prompt for the equation
+  print "To calculate the quadratic roots, please enter the equation: ";
+
+  # prompt for the first coefficient
+  print "Enter the first coefficient: "
+  a = gets.to_i
+
+  # prompt for the second coefficient
+  print "Enter the second coefficient: "
+  b = gets.to_i
+
+  # prompt for the third coefficient
+  print "Enter the third coefficient: "
+  c = gets.to_i
+
+  # Compute roots and print
+  quadratic_roots = quadraticRoots(a, b, c)
+  if quadratic_roots[0] != 0 && quadratic_roots[1] != 0 then
+    puts "The first root is: #{quadratic_roots[0]}"
+    puts "and the second root is: #{quadratic_roots[1]}"
+  end
+end
+
+main
+]0;sth6@gold18: ~/cs/214/projects/06/ruby[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/ruby[00m$ ruby quadratic.rb 
+To calculate the quadratic roots, please enter the equation: Enter the first coefficient: 0
+Enter the second coefficient: 5
+Enter the third coefficient: 10
+quadraticRoots(): a is zero!
+]0;sth6@gold18: ~/cs/214/projects/06/ruby[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/ruby[00m$ ruby quadratic.rb 
+To calculate the quadratic roots, please enter the equation: Enter the first coefficient: 1
+Enter the second coefficient: 1
+Enter the third coefficient: 10
+quadraticRoots(): b^2 - 4ac is negative!
+]0;sth6@gold18: ~/cs/214/projects/06/ruby[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/ruby[00m$ ruby quadratic.rb 
+To calculate the quadratic roots, please enter the equation: Enter the first coefficient: 2
+Enter the second coefficient: 5
+Enter the third coefficient: 2
+The first root is: -0.5
+and the second root is: -2.0
+]0;sth6@gold18: ~/cs/214/projects/06/ruby[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/ruby[00m$ ruby quadratic.rb 
+To calculate the quadratic roots, please enter the equation: Enter the first coefficient: 2
+Enter the second coefficient: 6
+Enter the third coefficient: 2
+The first root is: -0.3819660112501051
+and the second root is: -2.618033988749895
+]0;sth6@gold18: ~/cs/214/projects/06/ruby[01;32msth6@gold18[00m:[01;34m~/cs/214/projects/06/ruby[00m$ exit
+
+Script done on 2022-02-18 13:03:42-05:00 [COMMAND_EXIT_CODE="0"]

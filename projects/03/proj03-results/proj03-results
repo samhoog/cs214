@@ -1,0 +1,291 @@
+Script started on 2022-01-31 16:09:41-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@remotel2: ~/cs/214/projects/03/java[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/java[00m$ cat letter_       Lee  etterGrades.java
+/* letterGrade.java calculates your letter grade
+ *
+ * Input: The grade average
+ * Precondition: The average is an integer 0-100
+ * Output: The corrosponding letter grade
+ *
+ * Completed by: Sam Hoogewind
+ * Date: January 31, 2022
+ **********************************************************/
+
+import java.util.Scanner;
+
+public class LetterGrades {
+
+   public static void main(String[] args) {
+      Scanner keyboard = new Scanner(System.in);
+      System.out.println("\nEnter your grade average: "); // prompt
+
+      int average = keyboard.nextInt();      // read average
+      System.out.println(letterGrade(average)); // display the grade
+   }
+
+   /***************************************************************
+    * letterGrade() converts a grade average to it's letter grade.
+    *
+    * Receive: average, an int.
+    * PRE: average is an int between 0 and 100
+    * Return: the grade corrosponding to the average
+    */
+
+    public static char letterGrade(int average)
+   {
+      switch (average / 10)
+      {
+         case 10: case 9:
+            return 'A';
+         case 8:
+            return 'B';
+         case 7:
+            return 'C';
+         case 6:
+            return 'D';
+         default:
+            return 'F';
+      }
+   }
+    
+
+}]0;sth6@remotel2: ~/cs/214/projects/03/java[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/java[00m$ javac -deprecation let   LetterGrades.java 
+]0;sth6@remotel2: ~/cs/214/projects/03/java[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/java[00m$ java LetterGrades
+
+Enter your grade average: 
+95
+A
+]0;sth6@remotel2: ~/cs/214/projects/03/java[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/java[00m$ java LetterGrades
+
+Enter your grade average: 
+86
+B
+]0;sth6@remotel2: ~/cs/214/projects/03/java[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/java[00m$ java LetterGrades
+
+Enter your grade average: 
+74
+C
+]0;sth6@remotel2: ~/cs/214/projects/03/java[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/java[00m$ java LetterGrades
+
+Enter your grade average: 
+69 8
+D
+]0;sth6@remotel2: ~/cs/214/projects/03/java[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/java[00m$ java LetterGrades
+
+Enter your grade average: 
+35
+F
+]0;sth6@remotel2: ~/cs/214/projects/03/java[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/java[00m$ java LetterGrades
+
+Enter your grade average: 
+100
+A
+]0;sth6@remotel2: ~/cs/214/projects/03/java[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/java[00m$ exit
+exit
+
+Script done on 2022-01-31 16:10:34-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-01-31 16:10:57-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@remotel2: ~/cs/214/projects/03/ada[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ada[00m$ catlett     letter_grades.adb
+-- letter_grades.adb calculates your letter grade
+--
+-- Input: The grade average
+-- Precondition: The average is an integer 0-100
+-- Output: The corrosponding letter grade
+--
+-- Completed by: Sam Hoogewind
+-- Date: January 31, 2022
+----------------------------------------------------
+
+with Ada.Text_IO, Ada.Integer_Text_IO;
+use  Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure letter_grades is
+
+   average : Integer;
+   grade : character;
+
+   function LetterGrade(average : integer) return character
+   is
+      begin
+         case (average / 10) is 
+         when 10 => grade := 'A';
+         when 9 => grade := 'A';
+         when 8 => grade := 'B';
+         when 7 => grade := 'C';
+         when 6 => grade := 'D';
+         when others => grade := 'F';
+
+         end case;
+         
+         return grade;
+   end LetterGrade;
+
+begin                                          
+   Put("Enter your grade average: ");           -- Prompt for input
+   Get(average);                           -- Input
+   Put( LetterGrade(average) );                 -- Convert and output
+   New_Line;
+end letter_grades;
+
+]0;sth6@remotel2: ~/cs/214/projects/03/ada[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ada[00m$ gnatmake letter_grades.adb 
+gnatmake: "letter_grades" up to date.
+]0;sth6@remotel2: ~/cs/214/projects/03/ada[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ada[00m$ ./letter_grades 
+Enter your grade average: 95
+A
+]0;sth6@remotel2: ~/cs/214/projects/03/ada[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ada[00m$ ./letter_grades 
+Enter your grade average: 84
+B
+]0;sth6@remotel2: ~/cs/214/projects/03/ada[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ada[00m$ ./letter_grades 
+Enter your grade average: 76
+C
+]0;sth6@remotel2: ~/cs/214/projects/03/ada[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ada[00m$ ./letter_grades 
+Enter your grade average: 68
+D
+]0;sth6@remotel2: ~/cs/214/projects/03/ada[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ada[00m$ ./letter_grades 
+Enter your grade average: 35
+F
+]0;sth6@remotel2: ~/cs/214/projects/03/ada[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ada[00m$ ./letter_grades 
+Enter your grade average: 100
+A
+]0;sth6@remotel2: ~/cs/214/projects/03/ada[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ada[00m$ exit
+exit
+
+Script done on 2022-01-31 16:11:41-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-01-31 16:06:01-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ cat src/letter_grades.clj
+;;;; letter_grades.clj calculates your letter grade
+;;;;
+;;;; Input: The grade average
+;;;; Precondition: The average is an integer 0-100
+;;;; Output: The corrosponding letter grade
+;;;;
+;;;; Completed by: Sam Hoogewind
+;;;; Date: January 31, 2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns letter_grades)                    ; name the program
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; letterGrade() converts a grade average to it's letter grade.
+;;;
+;;; Receive: average, an int.
+;;; PRE: average is an int between 0 and 100
+;;; Return: the grade corrosponding to the average
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn letterGrade[average]
+  (cond
+    (= (quot average 10) 10) 'A
+    (= (quot average 10) 9)  'A
+    (= (quot average 10) 8)  'B
+    (= (quot average 10) 7)  'C
+    (= (quot average 10) 6)  'D
+    :else                    'F
+  )
+)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Function -main() test-drives our letterGrade() function.
+;;; Input: average {your grade average}.
+;;; Output: the grade corrosponding to average.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -main []
+ (print "\nEnter your grade average: ") (flush)
+ (let
+    [ average (Integer/parseInt (read-line)) ] ; read average (an int))
+    (println (letterGrade average) "\n")        ; display its grade
+
+ )
+)
+
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ clojure -m cir   letter_grades.cl   
+
+Enter your grade average: 95
+A 
+
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ clojure -m letter_grades
+
+Enter your grade average: 83
+B 
+
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ clojure -m letter_grades
+
+Enter your grade average: 75 7
+C 
+
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ clojure -m letter_grades
+6
+Enter your grade average: 4
+D 
+
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ clojure -m letter_grades
+
+Enter your grade average: 38
+F 
+
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ e clojure -m letter_grades
+100
+Enter your grade average: 
+A 
+
+]0;sth6@remotel2: ~/cs/214/projects/03/clojure[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/clojure[00m$ exit
+exit
+
+Script done on 2022-01-31 16:06:42-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-01-31 16:08:23-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sth6@remotel2: ~/cs/214/projects/03/ruby[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ruby[00m$ codeexitruby letter_grades.rb [1Pcat letter_grades.rb 
+# letter_grades.rb calculates your letter grade
+#
+# Input: The grade average
+# Precondition: The average is an integer 0-100
+# Output: The corrosponding letter grade
+#
+# Completed by: Sam Hoogewind
+# Date: January 31, 2022
+
+def letterGrade(average)
+  average = average / 10
+  case average
+  when 10
+    grade = 'A'
+  when 9
+    grade = 'A'
+  when 8
+    grade = 'B'
+  when 7
+    grade = 'C'
+  when 6
+    grade = 'D'
+  else
+    grade = 'F'
+ end
+end
+ 
+ if __FILE__ == $0
+    print "Enter your grade average: "
+    average = gets.to_i
+    print "Letter grade is: "
+    puts letterGrade(average)
+ end
+ 
+ ]0;sth6@remotel2: ~/cs/214/projects/03/ruby[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ruby[00m$ cat letter_grades.rb ode[Kexitruby letter_grades.rb 
+Enter your grade average: 100   95
+Letter grade is: A
+]0;sth6@remotel2: ~/cs/214/projects/03/ruby[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ruby[00m$ ruby letter_grades.rb 
+Enter your grade average: 84
+Letter grade is: B
+]0;sth6@remotel2: ~/cs/214/projects/03/ruby[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ruby[00m$ ruby letter_grades.rb 
+Enter your grade average: 76
+Letter grade is: C
+]0;sth6@remotel2: ~/cs/214/projects/03/ruby[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ruby[00m$ ruby letter_grades.rb 
+Enter your grade average: 68
+Letter grade is: D
+]0;sth6@remotel2: ~/cs/214/projects/03/ruby[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ruby[00m$ ruby letter_grades.rb 
+Enter your grade average: 35
+Letter grade is: F
+]0;sth6@remotel2: ~/cs/214/projects/03/ruby[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ruby[00m$ ruby letter_grades.rb 
+Enter your grade average: 100] 
+Letter grade is: A
+]0;sth6@remotel2: ~/cs/214/projects/03/ruby[01;32msth6@remotel2[00m:[01;34m~/cs/214/projects/03/ruby[00m$ exit
+exit
+
+Script done on 2022-01-31 16:08:47-05:00 [COMMAND_EXIT_CODE="0"]
