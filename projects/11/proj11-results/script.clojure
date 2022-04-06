@@ -1,0 +1,142 @@
+Script started on 2022-03-29 14:36:54-04:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="189" LINES="12"]
+]0;sth6@gold02: ~/cs/214/projects/11/clojure[01;32msth6@gold02[00m:[01;34m~/cs/214/projects/11/clojure[00m$ sr[K[Kcat src/liost[K[K[Ksto[KOps.clj src/search.clj 
+;; listOps.clj is a Clojure "module" for list operations.
+;;
+;; Begun by: Prof. Adams, CS 214 at Calvin College.
+;; Completed by: Sam Hoogewind
+;; Date: March 29, 2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; maxOf2() finds the maximum of two values.  
+;; Receive: val1, val2, two values.  
+;; PRE: val1 and val2 can be compared using >.
+;; Return: the maximum of val1 and val2. 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn maxOf2 [val1 val2]
+  (if (> val1 val2)      ; if val1 > val2
+    val1                 ;   return val1
+    val2                 ; else return val2
+  )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; listMax() finds the maximum value in a list.
+;; Receive: aList, a list of values.    
+;; PRE: aList is a list 
+;;      values in aList can be compared using >.
+;; Return: the maximum value in aList.         
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn listMax [aList]
+  (if (list? aList)
+    (if (empty? aList)
+      nil
+      (let
+        [firstVal (first aList)]
+        (if (= (count aList) 1)
+          firstVal
+          (maxOf2 firstVal (listMax (rest aList)))
+        )
+      )
+    )
+    nil
+  )
+)
+
+;; using Clojure's built-in max and apply functions
+(defn listMax2 [aList]
+  (if (list? aList)       ; if aList is a list:
+    (if (empty? aList)    ;  if aList is empty:
+      nil                 ;    nil
+      (apply max aList)   ;  else apply max to 
+    )                     ;        the items in aList
+  )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; listSearch() finds a given value in a list.
+;; Receive: aList, a list of values and aValue, an integer.    
+;; PRE: aList is a list 
+;; Return: the index of aValue in aList or -1 if not found.         
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn listSearch [aList aValue count]
+  (if (list? aList)
+    (if (empty? aList)
+      -1
+      (let
+      [firstVal (first aList)]
+        (if (= firstVal aValue)
+          count
+          (listSearch (rest aList) aValue (+ count 1))
+        )
+      )
+    )
+    -1
+  )
+)
+
+;; search.clj tests a function to search a list for a given value.
+;;
+;; Output: four lists, and 
+;;          the results of calling a search() function on them.
+;;
+;; Usage: clojure -m search
+;;
+;; Begun by: Dr. Adams, CS 214 at Calvin College.
+;; Completed by: Sam Hoogewind
+;; Date: March 29, 2022
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns search)
+
+(load "listOps")                      ; load module
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Function -main tests function listSearch(). 
+;; Output: the results of testing listSearch() on various lists.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -main []
+  (let
+    [ 
+      list1 '(99 88 77 66 55)        ; 
+      list2 (list 55 66 77 88 99)    ; 
+      list3 (list 55 77 99 88 66)    ; 
+      list4 (list 11 22 33 44 55)    ;
+      emptyList '()                  ; list is empty
+    ]
+
+    (println)
+    (println "list1: " list1)        ; print list1,
+    (println "list2: " list2)        ;   list2,
+    (println "list3: " list3)        ;   list3,
+    (println "list4: " list4)        ;   list4
+    (println "empty: " emptyList)    ;   list5,
+    (println)                        ;
+    (println "The index of 99 in list1 is: " (listSearch list1 99 0))
+    (println "The index of 99 in list2 is: " (listSearch list2 99 0))
+    (println "The index of 99 in list3 is: " (listSearch list3 99 0))
+    (println "The index of 99 in list4 is: " (listSearch list4 99 0))
+    (println)
+    (println "The index of 99 in empty list is: " (listSearch emptyList 99 0))
+    (println)
+  )
+)
+
+]0;sth6@gold02: ~/cs/214/projects/11/clojure[01;32msth6@gold02[00m:[01;34m~/cs/214/projects/11/clojure[00m$ clojure -m search
+
+list1:  (99 88 77 66 55)
+list2:  (55 66 77 88 99)
+list3:  (55 77 99 88 66)
+list4:  (11 22 33 44 55)
+empty:  ()
+
+The index of 99 in list1 is:  0
+The index of 99 in list2 is:  4
+The index of 99 in list3 is:  2
+The index of 99 in list4 is:  -1
+
+The index of 99 in empty list is:  -1
+
+]0;sth6@gold02: ~/cs/214/projects/11/clojure[01;32msth6@gold02[00m:[01;34m~/cs/214/projects/11/clojure[00m$ exit
+
+Script done on 2022-03-29 14:37:12-04:00 [COMMAND_EXIT_CODE="0"]
